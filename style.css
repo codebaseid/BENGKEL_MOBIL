@@ -258,3 +258,61 @@ body.nav-open .nav-menu{
 .viewer-close:hover {
     transform: scale(1.2);
 }
+
+/* =======================================================
+   FINAL FIX: TOMBOL HAMBURGER TERLIHAT & JELAS
+   ======================================================= */
+
+/* override btn.small agar TIDAK mengganggu hamburger */
+.hamburger.btn.small {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* styling tombol hamburger */
+.hamburger {
+    width: 44px !important;
+    height: 44px !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+body.theme-light .hamburger {
+    background: rgba(0,0,0,0.06);
+}
+
+/* TIGA GARIS */
+.hamburger span {
+    width: 22px !important;
+    height: 3px !important;
+    background: var(--text) !important;
+    border-radius: 3px;
+    display: block;
+    transition: var(--trans);
+}
+
+/* tampilkan hanya di mobile */
+@media (max-width: 880px) {
+    .hamburger {
+        display: flex !important;
+    }
+}
+
+/* Animasi jadi X */
+body.nav-open .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+body.nav-open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+body.nav-open .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
