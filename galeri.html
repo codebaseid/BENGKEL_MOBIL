@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id" data-lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri – Bengkel Family Teknik</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-light">
+
+    <header class="nav">
+      <div class="nav-inner container">
+        <div class="brand">
+          BENGKEL <span class="brand-strong">FAMILY TEKNIK</span>
+        </div>
+
+        <nav id="navMenu" class="nav-menu">
+           <a href="index.html" class="nav-link">Beranda</a>
+           <a href="layanan.html" class="nav-link">Layanan</a>
+           <a href="galeri.html" class="nav-link">Galeri</a>
+           <a href="kontak.html" class="nav-link">Kontak</a>
+        </nav>
+
+    <div class="nav-actions">
+      <button id="langToggle" class="btn small">ID</button>
+      <button id="themeToggle" class="btn small">Cerah</button>
+      <button id="menuToggle" class="btn small hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-top-spacer"></div>
+
+    <section class="gallery-section container">
+        <div class="section-head">
+            <h2 class="section-title">Galeri Pekerjaan</h2>
+            <p class="muted">Dokumentasi foto & video pekerjaan bengkel kami.</p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="gallery-filter">
+            <button class="gf-btn active" data-filter="all">Semua</button>
+            <button class="gf-btn" data-filter="foto">Foto</button>
+            <button class="gf-btn" data-filter="video">Video</button>
+            <button class="gf-btn" data-filter="perbaikan">Perbaikan</button>
+        </div>
+
+        <!-- GALLERY GRID -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Item foto -->
+            <div class="g-item foto">
+                <img src="gallery/foto/foto1.jpg" alt="Foto Pekerjaan 1" />
+            </div>
+
+            <div class="g-item foto">
+                <img src="gallery/foto/foto2.jpg" alt="Foto Pekerjaan 2" />
+            </div>
+
+            <!-- Item video -->
+            <div class="g-item video">
+                <video controls>
+                    <source src="gallery/video/video1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Foto kategori lain -->
+            <div class="g-item perbaikan">
+                <img src="gallery/foto-perbaikan/perbaikan1.jpg" alt="Perbaikan 1" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL VIEWER -->
+    <div class="viewer" id="viewer">
+        <div class="viewer-content" id="viewerContent"></div>
+        <span class="viewer-close" id="viewerClose">×</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

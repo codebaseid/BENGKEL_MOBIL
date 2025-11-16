@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BENGKEL FAMILY TEKNIK</title>
+
+  <!-- Font (online) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-light" data-lang="id">
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand" aria-hidden="true">
+        BENGKEL <span class="brand-strong">FAMILY TEKNIK</span>
+      </div>
+
+      <nav id="navMenu" class="nav-menu" aria-label="Main navigation">
+          <a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a>
+          <a href="#services" class="nav-link" data-i18n="nav_services">Layanan</a>
+          <a href="galeri.html" class="nav-link">Galeri</a>
+          <a href="#map" class="nav-link" data-i18n="nav_map">Lokasi</a>
+          <a href="#contact" class="nav-link" data-i18n="nav_contact">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="langToggle" class="btn small" aria-pressed="false" aria-label="Toggle language">ID</button>
+        <button id="themeToggle" class="btn small" aria-pressed="false" aria-label="Toggle theme">Cerah</button>
+        <button id="menuToggle" class="btn small hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-wrap container">
+      <h1 class="hero-title" data-i18n="hero_title">Perawatan Mobil Tingkat Profesional</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Teknisi berpengalaman • Alat modern • Hasil terjamin</p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn primary" data-i18n="cta_contact">Hubungi Kami</a>
+        <a href="#services" class="btn ghost" data-i18n="cta_services">Lihat Layanan</a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <div class="meta-label" data-i18n="meta_time">Waktu (WIB)</div>
+          <div id="wibClock" class="meta-value">--:--:--</div>
+        </div>
+
+        <div class="meta-item">
+          <div class="meta-label" data-i18n="meta_open">Jam Operasional</div>
+          <div class="meta-value" data-i18n="meta_hours">08:00 - 17:00 WIB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="services_title">Layanan Kami</h2>
+        <p class="muted" data-i18n="services_sub">Ditangani oleh teknisi bersertifikat dengan proses kerja presisi.</p>
+      </div>
+
+      <div class="grid services-grid" aria-live="polite">
+        <article class="card">
+          <h3 data-i18n="srv_battery_title">Jual Aki & Cas Aki</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_battery_text">Penggantian aki berkualitas dan pengecasan aman menggunakan peralatan bengkel profesional.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_rewind_title">Gulung Ulang Dynamo (3 Phasa & 1 Phasa)</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_rewind_text">Gulung ulang dynamo presisi sesuai spesifikasi pabrik untuk performa tahan lama.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_starter_title">Service Dynamo Starter & Alternator</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_starter_text">Diagnosis, perbaikan, dan tuning starter serta alternator untuk berbagai merek.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_radiator_title">Service Radiator</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_radiator_text">Pembersihan, penggantian seal, dan perbaikan kebocoran untuk mencegah overheat.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_susp_title">Service Suspensi</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_susp_text">Perbaikan shockbreaker, bushing, serta align untuk kenyamanan dan stabilitas berkendara.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_eps_title">Service Setir EPS Elektrik</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_eps_text">Diagnosis EPS dengan alat modern; penggantian komponen dan kalibrasi.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="srv_chassis_title">Service Kaki-Kaki Mobil</h3>
+          <div class="hr"></div>
+          <p data-i18n="srv_chassis_text">Perbaikan tie rod, ball joint, arm, serta pemeriksaan geometrik roda.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map" class="section map-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="map_title">Lokasi Bengkel</h2>
+        <p class="muted" data-i18n="map_sub">Kunjungi kami untuk konsultasi dan pengecekan langsung.</p>
+      </div>
+
+      <div class="map-frame">
+        <!-- Ganti src ke Google Maps lokasi bengkel -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.016210477449!2d110.36949087419508!3d-7.888815378018751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a574dc2621cb7%3A0xa83f94c8e0f5fe97!2sYogyakarta!5e0!3m2!1sid!2sid!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="contact_title">Kontak & Informasi</h2>
+        <p class="muted" data-i18n="contact_sub">Hubungi kami untuk booking servis atau konsultasi teknis.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label" data-i18n="contact_phone">WhatsApp</div>
+          <div class="contact-value">+62 8xx-xxxx-xxxx</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label" data-i18n="contact_address">Alamat</div>
+          <div class="contact-value">Jalan Contoh No.123, Kota — Provinsi</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-label" data-i18n="contact_hours">Jam Operasional</div>
+          <div class="contact-value">Senin–Sabtu • 08:00 – 17:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="year"></span> BENGKEL FAMILY TEKNIK — All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
