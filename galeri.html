@@ -1,84 +1,292 @@
 <!DOCTYPE html>
 <html lang="id" data-lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galeri – Bengkel Family Teknik</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-i18n="gallery_title">Galeri Bengkel</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Galeri foto dan video Bengkel Family Tehnik. Dokumentasi layanan, fasilitas, dan pekerjaan mekanik.">
+    <meta property="og:title" content="Galeri Bengkel Family Tehnik">
+    <meta property="og:description" content="Foto dan video pekerjaan bengkel, dokumentasi layanan dan fasilitas.">
+    <meta property="og:image" content="gallery/foto/foto1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codebaseid.github.io/BENGKEL_MOBIL/galeri.html">
+
+    <link rel="canonical" href="https://codebaseid.github.io/BENGKEL_MOBIL/galeri.html">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="theme-light">
+    
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">
+                Bengkel<span class="brand-strong">FamilyTehnik</span>
+            </a>
 
-    <header class="nav">
-      <div class="nav-inner container">
-        <div class="brand">
-          BENGKEL <span class="brand-strong">FAMILY TEKNIK</span>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a>
+                <a href="index.html#services" class="nav-link" data-i18n="nav_services">Layanan</a>
+                <a href="index.html#map" class="nav-link" data-i18n="nav_map">Lokasi</a>
+                <a href="index.html#contact" class="nav-link" data-i18n="nav_contact">Kontak</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="langToggle" class="btn small">ID</button>
+                <button id="themeToggle" class="btn small">Cerah</button>
+                <div id="menuToggle" class="hamburger" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
         </div>
-
-        <nav id="navMenu" class="nav-menu">
-           <a href="index.html" class="nav-link">Beranda</a>
-           <a href="layanan.html" class="nav-link">Layanan</a>
-           <a href="galeri.html" class="nav-link">Galeri</a>
-           <a href="kontak.html" class="nav-link">Kontak</a>
-        </nav>
-
-    <div class="nav-actions">
-      <button id="langToggle" class="btn small">ID</button>
-      <button id="themeToggle" class="btn small">Cerah</button>
-      <button id="menuToggle" class="btn small hamburger">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-    </header>
+    </nav>
 
     <div class="site-top-spacer"></div>
 
+    <!-- =======================
+         GALLERY SECTION
+    ======================= -->
     <section class="gallery-section container">
         <div class="section-head">
-            <h2 class="section-title">Galeri Pekerjaan</h2>
-            <p class="muted">Dokumentasi foto & video pekerjaan bengkel kami.</p>
+            <h2 class="section-title" data-i18n="gallery_title">Galeri Bengkel</h2>
+            <p class="muted" data-i18n="gallery_sub">Dokumentasi foto & video dari berbagai layanan kami.</p>
         </div>
 
         <!-- FILTER BUTTONS -->
         <div class="gallery-filter">
-            <button class="gf-btn active" data-filter="all">Semua</button>
-            <button class="gf-btn" data-filter="foto">Foto</button>
-            <button class="gf-btn" data-filter="video">Video</button>
-            <button class="gf-btn" data-filter="perbaikan">Perbaikan</button>
+            <button class="gf-btn active" data-filter="all" data-i18n="filter_all">Semua</button>
+            <button class="gf-btn" data-filter="foto" data-i18n="filter_photo">Foto</button>
+            <button class="gf-btn" data-filter="video" data-i18n="filter_video">Video</button>
         </div>
 
         <!-- GALLERY GRID -->
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Item foto -->
+        <div class="gallery-grid">
+
+            <!-- FOTO -->
             <div class="g-item foto">
-                <img src="gallery/foto/foto1.jpg" alt="Foto Pekerjaan 1" />
+                <img class="lazy-img" data-src="gallery/foto/foto1.jpg" alt="Foto Bengkel 1">
             </div>
 
             <div class="g-item foto">
-                <img src="gallery/foto/foto2.jpg" alt="Foto Pekerjaan 2" />
+                <img class="lazy-img" data-src="gallery/foto/foto2.jpg" alt="Foto Bengkel 2">
             </div>
 
-            <!-- Item video -->
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto3.jpg" alt="Foto Bengkel 3">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto4.jpg" alt="Foto Bengkel 4">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto5.jpg" alt="Foto Bengkel 5">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto6.jpg" alt="Foto Bengkel 6">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto7.jpg" alt="Foto Bengkel 7">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto8.jpg" alt="Foto Bengkel 8">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto9.jpg" alt="Foto Bengkel 9">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto10.jpg" alt="Foto Bengkel 10">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto11.jpg" alt="Foto Bengkel 11">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto12.jpg" alt="Foto Bengkel 12">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto13.jpg" alt="Foto Bengkel 13">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto14.jpg" alt="Foto Bengkel 14">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto15.jpg" alt="Foto Bengkel 15">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto16.jpg" alt="Foto Bengkel 16">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto17.jpg" alt="Foto Bengkel 17">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto18.jpg" alt="Foto Bengkel 18">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto19.jpg" alt="Foto Bengkel 19">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto20.jpg" alt="Foto Bengkel 20">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto21.jpg" alt="Foto Bengkel 21">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto22.jpg" alt="Foto Bengkel 22">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto23.jpg" alt="Foto Bengkel 23">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto24.jpg" alt="Foto Bengkel 24">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto25.jpg" alt="Foto Bengkel 25">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto26.jpg" alt="Foto Bengkel 26">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto27.jpg" alt="Foto Bengkel 27">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto28.jpg" alt="Foto Bengkel 28">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto29.jpg" alt="Foto Bengkel 29">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto30.jpg" alt="Foto Bengkel 30">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto31.jpg" alt="Foto Bengkel 31">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto32.jpg" alt="Foto Bengkel 32">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto33.jpg" alt="Foto Bengkel 33">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto34.jpg" alt="Foto Bengkel 34">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto35.jpg" alt="Foto Bengkel 35">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto36.jpg" alt="Foto Bengkel 36">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto37.jpg" alt="Foto Bengkel 37">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto38.jpg" alt="Foto Bengkel 38">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto39.jpg" alt="Foto Bengkel 39">
+            </div>
+
+            <div class="g-item foto">
+                <img class="lazy-img" data-src="gallery/foto/foto40.jpg" alt="Foto Bengkel 40">
+            </div>
+
+            <!-- 5 FOTO COMING SOON -->
+            <div class="g-item foto coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item foto coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item foto coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item foto coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item foto coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <!-- VIDEO -->
             <div class="g-item video">
-                <video controls>
+                <video muted>
                     <source src="gallery/video/video1.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <!-- Foto kategori lain -->
-            <div class="g-item perbaikan">
-                <img src="gallery/foto-perbaikan/perbaikan1.jpg" alt="Perbaikan 1" />
+            <div class="g-item video">
+                <video muted>
+                    <source src="gallery/video/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- 3 VIDEO COMING SOON -->
+            <div class="g-item video coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item video coming">
+              <div class="coming-box">COMING SOON</div>
+            </div>
+
+            <div class="g-item video coming">
+              <div class="coming-box">COMING SOON</div>
             </div>
 
         </div>
     </section>
 
-    <!-- MODAL VIEWER -->
-    <div class="viewer" id="viewer">
-        <div class="viewer-content" id="viewerContent"></div>
-        <span class="viewer-close" id="viewerClose">×</span>
+    <!-- VIEWER MODAL -->
+    <div id="viewer" class="viewer">
+        <div id="viewerContent" class="viewer-content"></div>
+        <div id="viewerClose" class="viewer-close">&times;</div>
     </div>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/6281284102728" target="_blank" class="wa-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
     <script src="script.js"></script>
 </body>

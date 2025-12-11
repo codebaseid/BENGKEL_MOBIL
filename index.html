@@ -1,34 +1,64 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BENGKEL FAMILY TEKNIK</title>
 
-  <!-- Font (online) -->
+  <!-- SEO -->
+  <title>Bengkel Family Teknik – Service Mobil Profesional | Alternator, Radiator, Kaki-Kaki, EPS</title>
+  <meta name="description" content="Bengkel Family Teknik melayani Jual & Cas Aki, Service Dynamo Starter & Alternator, Radiator, Suspensi, Setir EPS Elektrik, dan Kaki-Kaki Mobil. Teknisi berpengalaman, hasil bergaransi.">
+  <meta name="keywords" content="bengkel mobil, service mobil, service alternator, gulung ulang dinamo, service radiator, service EPS elektrik, service kaki kaki mobil, jual aki, cas aki, bengkel ciputat, bengkel tangerang selatan">
+  <meta name="author" content="Bengkel Family Teknik">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Bengkel Family Teknik – Service Mobil Profesional" />
+  <meta property="og:description" content="Service Alternator • EPS Elektrik • Radiator • Suspensi • Kaki-Kaki Mobil — Teknisi berpengalaman." />
+  <meta property="og:image" content="gallery/foto/foto1.jpg" />
+  <meta property="og:url" content="https://codebaseid.github.io/BENGKEL_MOBIL" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bengkel Family Teknik – Service Mobil Profesional" />
+  <meta name="twitter:description" content="Servis mobil lengkap — Alternator, Radiator, EPS Elektrik, Suspensi, Kaki-Kaki & AKI. Bergaransi." />
+  <meta name="twitter:image" content="gallery/foto/foto1.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://codebaseid.github.io/BENGKEL_MOBIL">
+
+  <!-- Fonts Optimized -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#1E3A8A" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="gallery/foto/foto1.jpg" />
 </head>
+
 <body class="theme-light" data-lang="id">
 
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner container">
-      <div class="brand" aria-hidden="true">
+      <div class="brand">
         BENGKEL <span class="brand-strong">FAMILY TEKNIK</span>
       </div>
 
       <nav id="navMenu" class="nav-menu" aria-label="Main navigation">
-          <a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a>
-          <a href="#services" class="nav-link" data-i18n="nav_services">Layanan</a>
-          <a href="galeri.html" class="nav-link">Galeri</a>
-          <a href="#map" class="nav-link" data-i18n="nav_map">Lokasi</a>
-          <a href="#contact" class="nav-link" data-i18n="nav_contact">Kontak</a>
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Beranda</a>
+        <a href="#services" class="nav-link" data-i18n="nav_services">Layanan</a>
+        <a href="galeri.html" class="nav-link">Galeri</a>
+        <a href="#map" class="nav-link" data-i18n="nav_map">Lokasi</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Kontak</a>
       </nav>
 
       <div class="nav-actions">
-        <button id="langToggle" class="btn small" aria-pressed="false" aria-label="Toggle language">ID</button>
-        <button id="themeToggle" class="btn small" aria-pressed="false" aria-label="Toggle theme">Cerah</button>
+        <button id="langToggle" class="btn small" aria-label="Toggle language">ID</button>
+        <button id="themeToggle" class="btn small" aria-label="Toggle theme">Cerah</button>
         <button id="menuToggle" class="btn small hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -39,8 +69,14 @@
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-wrap container">
-      <h1 class="hero-title" data-i18n="hero_title">Perawatan Mobil Tingkat Profesional</h1>
-      <p class="hero-sub" data-i18n="hero_sub">Teknisi berpengalaman • Alat modern • Hasil terjamin</p>
+
+      <h1 class="hero-title" data-i18n="hero_title">
+        Perawatan Mobil Tingkat Profesional
+      </h1>
+
+      <p class="hero-sub" data-i18n="hero_sub">
+        Teknisi berpengalaman • Alat modern • Hasil terjamin
+      </p>
 
       <div class="hero-cta">
         <a href="#contact" class="btn primary" data-i18n="cta_contact">Hubungi Kami</a>
@@ -58,59 +94,77 @@
           <div class="meta-value" data-i18n="meta_hours">08:00 - 17:00 WIB</div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="section">
     <div class="container">
+
       <div class="section-head">
         <h2 data-i18n="services_title">Layanan Kami</h2>
         <p class="muted" data-i18n="services_sub">Ditangani oleh teknisi bersertifikat dengan proses kerja presisi.</p>
       </div>
 
-      <div class="grid services-grid" aria-live="polite">
+      <div class="grid services-grid">
+
         <article class="card">
           <h3 data-i18n="srv_battery_title">Jual Aki & Cas Aki</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_battery_text">Penggantian aki berkualitas dan pengecasan aman menggunakan peralatan bengkel profesional.</p>
+          <p data-i18n="srv_battery_text">
+            Penggantian aki berkualitas dan pengecasan aman menggunakan peralatan bengkel profesional.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_rewind_title">Gulung Ulang Dynamo (3 Phasa & 1 Phasa)</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_rewind_text">Gulung ulang dynamo presisi sesuai spesifikasi pabrik untuk performa tahan lama.</p>
+          <p data-i18n="srv_rewind_text">
+            Gulung ulang dynamo presisi sesuai spesifikasi pabrik untuk performa tahan lama.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_starter_title">Service Dynamo Starter & Alternator</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_starter_text">Diagnosis, perbaikan, dan tuning starter serta alternator untuk berbagai merek.</p>
+          <p data-i18n="srv_starter_text">
+            Diagnosis, perbaikan, dan tuning starter serta alternator untuk berbagai merek.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_radiator_title">Service Radiator</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_radiator_text">Pembersihan, penggantian seal, dan perbaikan kebocoran untuk mencegah overheat.</p>
+          <p data-i18n="srv_radiator_text">
+            Pembersihan, penggantian seal, dan perbaikan kebocoran untuk mencegah overheat.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_susp_title">Service Suspensi</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_susp_text">Perbaikan shockbreaker, bushing, serta align untuk kenyamanan dan stabilitas berkendara.</p>
+          <p data-i18n="srv_susp_text">
+            Perbaikan shockbreaker, bushing, serta align untuk kenyamanan dan stabilitas berkendara.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_eps_title">Service Setir EPS Elektrik</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_eps_text">Diagnosis EPS dengan alat modern; penggantian komponen dan kalibrasi.</p>
+          <p data-i18n="srv_eps_text">
+            Diagnosis EPS dengan alat modern; penggantian komponen dan kalibrasi.
+          </p>
         </article>
 
         <article class="card">
           <h3 data-i18n="srv_chassis_title">Service Kaki-Kaki Mobil</h3>
           <div class="hr"></div>
-          <p data-i18n="srv_chassis_text">Perbaikan tie rod, ball joint, arm, serta pemeriksaan geometrik roda.</p>
+          <p data-i18n="srv_chassis_text">
+            Perbaikan tie rod, ball joint, arm, serta pemeriksaan geometrik roda.
+          </p>
         </article>
+
       </div>
     </div>
   </section>
@@ -118,29 +172,33 @@
   <!-- MAP -->
   <section id="map" class="section map-section">
     <div class="container">
+
       <div class="section-head">
         <h2 data-i18n="map_title">Lokasi Bengkel</h2>
         <p class="muted" data-i18n="map_sub">Kunjungi kami untuk konsultasi dan pengecekan langsung.</p>
       </div>
 
       <div class="map-frame">
-        <!-- Ganti src ke Google Maps lokasi bengkel -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.144547381826!2d106.80730731510609!3d-6.2671444642606375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f06e50e54a3f%3A0xfb8f32e2b2043614!2sGg.%20Kembang%20No.%2023%2C%20Cemp.%20Putih%2C%20Ciputat%20Tim.%2C%20Tangerang%20Selatan%2C%20Banten%2015412!5e0!3m2!1sid!2sid!4v1700000000000"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
+
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
+
       <div class="section-head">
         <h2 data-i18n="contact_title">Kontak & Informasi</h2>
         <p class="muted" data-i18n="contact_sub">Hubungi kami untuk booking servis atau konsultasi teknis.</p>
       </div>
 
       <div class="contact-grid">
+
         <div class="contact-card">
           <div class="contact-label" data-i18n="contact_phone">WhatsApp</div>
           <div class="contact-value">+62 812-8492-7297</div>
@@ -148,31 +206,32 @@
 
         <div class="contact-card">
           <div class="contact-label" data-i18n="contact_address">Alamat</div>
-          <div class="contact-value">Jl. Menjangan Raya No.9, RT.5/RW.8, Cemp. Putih, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15412</div>
+          <div class="contact-value">
+            Jl. Menjangan Raya No.23, RT.5/RW.8, Cempaka Putih, Ciputat Timur, Kota Tangerang Selatan, Banten 15412
+          </div>
         </div>
 
         <div class="contact-card">
           <div class="contact-label" data-i18n="contact_hours">Jam Operasional</div>
           <div class="contact-value">Senin–Minggu • 07:00 – 17:00</div>
         </div>
+
       </div>
+
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <small>© <span id="year"></span> BENGKEL FAMILY TEKNIK — All rights reserved.</small>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/6281284927297" 
-    class="wa-float" 
-    target="_blank" 
-    aria-label="Chat WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/6281284927297" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
   </a>
-
 
   <script src="script.js"></script>
 </body>
