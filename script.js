@@ -1,5 +1,5 @@
 /* ============================================================
-   script.js – ORIGINAL + ERROR FIX ONLY
+   script.js – Clean, Fixed & Optimized
    ============================================================ */
 
 /* ELEMENTS */
@@ -12,7 +12,7 @@ const wibClock = document.getElementById("wibClock");
 const yearEl = document.getElementById("year");
 
 /* ============================================================
-   DICTIONARY (i18n) — TIDAK DIUBAH
+   DICTIONARY (i18n)
    ============================================================ */
 const DICT = {
   nav_home: { id: "Beranda", en: "Home" },
@@ -61,7 +61,7 @@ const DICT = {
 };
 
 /* ============================================================
-   FUNCTIONS (TIDAK DIUBAH)
+   i18n Translation
    ============================================================ */
 function translatePage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -79,71 +79,178 @@ function setLanguage(lang) {
   translatePage(lang);
 }
 
+/* ============================================================
+   THEME HANDLER
+   ============================================================ */
 function setTheme(theme) {
   body.classList.remove("theme-light", "theme-dark");
-  body.classList.add(theme === "dark" ? "theme-dark" : "theme-light");
+
+  if (theme === "dark") {
+    body.classList.add("theme-dark");
+    themeToggle.textContent = "Gelap";
+  } else {
+    body.classList.add("theme-light");
+    themeToggle.textContent = "Cerah";
+  }
+
   localStorage.setItem("bft_theme", theme);
 }
 
 /* ============================================================
-   DOM READY — ERROR FIX DILAKUKAN DI SINI
+   WIB CLOCK
+   ============================================================ */
+function startWIBClock() {
+    function update() {
+        const now = new Date();
+
+        // WIB = UTC + 7
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const wib = new Date(utc + (7 * 3600000));
+
+        let hh = String(wib.getHours()).padStart(2, "0");
+        let mm = String(wib.getMinutes()).padStart(2, "0");
+        let ss = String(wib.getSeconds()).padStart(2, "0");
+
+        if (wibClock) wibClock.textContent = `${hh}:${mm}:${ss} WIB`;
+    }
+    update();
+    setInterval(update, 1000);
+}
+
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+function toggleMobileNav() {
+  const isOpen = body.classList.toggle("nav-open");
+  if (menuToggle) menuToggle.setAttribute("aria-expanded", isOpen);
+}
+
+/* ============================================================
+   INIT
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-  setTheme(localStorage.getItem("bft_theme") || "light");
-  setLanguage(localStorage.getItem("bft_lang") || "id");
 
-  /* ===== GALLERY & VIEWER (FIX) ===== */
-  const filterBtns = document.querySelectorAll(".gf-btn");
-  const galleryItems = document.querySelectorAll(".g-item");
-  const viewer = document.getElementById("viewer");
-  const viewerContent = document.getElementById("viewerContent");
-  const viewerClose = document.getElementById("viewerClose");
+  const savedTheme = localStorage.getItem("bft_theme");
+  setTheme(savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const filter = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+  const savedLang = localStorage.getItem("bft_lang") || "id";
+  setLanguage(savedLang);
 
-      galleryItems.forEach(item => {
-        item.style.display =
-          filter === "all" || item.classList.contains(filter)
-            ? "block"
-            : "none";
-      });
-    });
+  document.querySelectorAll(".coming").forEach(c => {
+    c.style.display = "none";
   });
 
-  galleryItems.forEach(item => {
-    item.addEventListener("click", () => {
-      viewer.classList.add("show");
-      body.style.overflow = "hidden";
-      viewerContent.innerHTML = "";
-      const media = item.querySelector("img, video").cloneNode(true);
-      if (media.tagName === "VIDEO") media.controls = true;
-      viewerContent.appendChild(media);
-    });
+  startWIBClock();
+
+  themeToggle?.addEventListener("click", () => {
+    setTheme(body.classList.contains("theme-dark") ? "light" : "dark");
   });
 
-  viewerClose?.addEventListener("click", () => {
-    viewer.classList.remove("show");
-    body.style.overflow = "";
+  langToggle?.addEventListener("click", () => {
+    setLanguage(body.getAttribute("data-lang") === "en" ? "id" : "en");
   });
 
-  /* ===== LAZY LOAD (FIX) ===== */
-  const lazyImages = document.querySelectorAll(".lazy-img");
+  menuToggle?.addEventListener("click", toggleMobileNav);
 
-  const lazyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const img = entry.target;
-      img.src = img.dataset.src;
-      img.onload = () => img.classList.add("loaded");
-      lazyObserver.unobserve(img);
-    });
-  }, { threshold: 0.1 });
+  document.querySelectorAll(".nav-menu a").forEach(a =>
+    a.addEventListener("click", () => {
+      if (body.classList.contains("nav-open")) toggleMobileNav();
+    })
+  );
 
-  lazyImages.forEach(img => lazyObserver.observe(img));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && body.classList.contains("nav-open")) toggleMobileNav();
+  });
 });
+
+/* ============================================================
+   GALLERY FILTER & VIEWER
+   ============================================================ */
+
+const filterBtns = document.querySelectorAll(".gf-btn");
+const galleryItems = document.querySelectorAll(".g-item");
+const viewer = document.getElementById("viewer");
+const viewerContent = document.getElementById("viewerContent");
+const viewerClose = document.getElementById("viewerClose");
+
+/* FILTER */
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    galleryItems.forEach(item => {
+      const isMatch = filter === "all" || item.classList.contains(filter);
+      item.style.display = isMatch ? "block" : "none";
+    });
+
+    document.querySelectorAll(".coming").forEach(c => {
+      c.style.display = "none";
+    });
+  });
+});
+
+/* VIEWER OPEN */
+galleryItems.forEach(item => {
+  item.addEventListener("click", () => {
+    viewer.classList.add("show");
+    body.style.overflow = "hidden"; // lock scroll
+
+    viewerContent.innerHTML = "";
+
+    const media = item.querySelector("img, video").cloneNode(true);
+    if (media.tagName === "VIDEO") media.controls = true;
+
+    viewerContent.appendChild(media);
+  });
+});
+
+/* VIEWER CLOSE */
+function closeViewer() {
+  viewer.classList.remove("show");
+  body.style.overflow = "";
+}
+
+viewerClose.addEventListener("click", closeViewer);
+viewer.addEventListener("click", e => {
+  if (e.target === viewer) closeViewer();
+
+});
+
+/* ============================================================
+   AUTO REFRESH WHEN USER RETURNS TO TAB
+   ============================================================ */
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+        window.location.href = "index.html";
+    }
+});
+
+/* =========================================================
+ LAZY LOAD IMAGES (BLUR-UP EFFECT)
+ ===========================================================*/
+const lazyImages = document.querySelectorAll(".lazy-img");
+
+const lazyObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const img = entry.target;
+        img.src = img.dataset.src;
+
+        img.onload = () => {
+            img.classList.add("loaded");
+        };
+
+        observer.unobserve(img);
+    });
+}, {
+    root: null,
+    threshold: 0.1
+});
+
+lazyImages.forEach(img => lazyObserver.observe(img));
