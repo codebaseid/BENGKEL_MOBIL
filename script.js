@@ -211,15 +211,20 @@ galleryItems.forEach(item => {
 
 /* VIEWER CLOSE */
 function closeViewer() {
+  if (!viewer) return;
   viewer.classList.remove("show");
   body.style.overflow = "";
 }
 
-viewerClose.addEventListener("click", closeViewer);
-viewer.addEventListener("click", e => {
-  if (e.target === viewer) closeViewer();
+if (viewerClose) {
+  viewerClose.addEventListener("click", closeViewer);
+}
 
-});
+if (viewer) {
+  viewer.addEventListener("click", e => {
+    if (e.target === viewer) closeViewer();
+  });
+}
 
 /* ============================================================
    AUTO REFRESH WHEN USER RETURNS TO TAB
